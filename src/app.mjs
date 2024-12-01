@@ -34,6 +34,7 @@ const server = createServer(async (req, res) => {
             if(userExists(body.id)){
                 res.writeHead(400, {'Content-Type': 'text/plain'});
                 res.end('User already exists');
+                break;
             }
             addUser(body);
             res.writeHead(200, {'Content-Type': 'text/plain'});
